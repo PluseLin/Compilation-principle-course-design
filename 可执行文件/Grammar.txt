@@ -1,0 +1,68 @@
+Program -> StateStr
+StateStr -> State StateStr
+StateStr -> $eps
+State -> $int $id Decl
+State -> $void $id FuncDecl
+Decl -> VarDecl
+Decl -> FuncDecl
+#Decl -> ArrayDecl $;
+VarDecl -> ArrayDecl $;
+FuncDecl -> $( FPara $) CodeBlock
+ArrayDecl -> $[ $const $] ArrayDecl
+ArrayDecl -> $eps
+FPara -> ArgsList
+FPara -> $void
+FPara -> $eps
+ArgsList -> Argument ArgsList1
+ArgsList1 -> $, Argument ArgsList1
+ArgsList1 -> $eps
+Argument -> $int $id
+CodeBlock -> ${ InState CodeStr $}
+InState -> $eps
+InState -> InVarDecl $; InState
+InVarDecl -> $int $id ArrayDecl
+CodeStr -> Code CodeStr
+CodeStr -> $eps
+Code -> IfCode
+Code -> WhileCode
+Code -> ReturnCode $;
+Code -> AssignCode $;
+#Code -> Expr $;
+AssignCode -> $id ArrayPart $= Expr
+ReturnCode -> $return ReturnCode1
+ReturnCode1 -> Expr
+ReturnCode1 -> $eps
+WhileCode -> $while $( Expr $) CodeBlock
+IfCode -> $if $( Expr $) CodeBlock ElseCode
+ElseCode -> $else CodeBlock
+ElseCode -> $eps
+Expr -> AddExpr RelopExpr
+RelopExpr -> Relop AddExpr
+RelopExpr -> $eps
+Relop -> $<
+Relop -> $<=
+Relop -> $>
+Relop -> $>=
+Relop -> $==
+Relop -> $!=
+AddExpr -> MulExpr AddExpr1
+AddExpr1 -> $+ MulExpr AddExpr1
+AddExpr1 -> $- MulExpr AddExpr1
+AddExpr1 -> $eps
+MulExpr -> Factor MulExpr1
+MulExpr1 -> $* Factor MulExpr1
+MulExpr1 -> $/ Factor MulExpr1
+MulExpr1 -> $eps
+Factor -> $const
+Factor -> $( Expr $)
+Factor -> $id Factor1
+Factor1 -> CallList
+Factor1 -> ArrayPart
+CallList -> $( RPara $)
+ArrayPart -> $eps
+ArrayPart -> $[ Expr $] ArrayPart
+RPara -> RParaList
+RPara -> $eps
+RParaList -> Expr RParaList1
+RParaList1 -> $, Expr RParaList1
+RParaList1 -> $eps

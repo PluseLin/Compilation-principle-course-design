@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>UI</class>
+ <widget class="QMainWindow" name="UI">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1200</width>
+    <height>900</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1200</width>
+    <height>900</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>1200</width>
+    <height>900</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>UI</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QTextBrowser" name="SourceText">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>-1</y>
+      <width>1200</width>
+      <height>600</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Courier</family>
+      <pointsize>9</pointsize>
+     </font>
+    </property>
+    <property name="lineWidth">
+     <number>0</number>
+    </property>
+   </widget>
+   <widget class="QTextBrowser" name="InfoText">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>650</y>
+      <width>1200</width>
+      <height>201</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>610</y>
+      <width>121</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>SimSun-ExtB</family>
+      <pointsize>14</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>编译信息</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1200</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="Compile">
+    <property name="title">
+     <string>编译</string>
+    </property>
+    <addaction name="actionGenQuat"/>
+    <addaction name="actionGenAsm"/>
+    <addaction name="separator"/>
+   </widget>
+   <widget class="QMenu" name="Tools">
+    <property name="title">
+     <string>分析</string>
+    </property>
+    <addaction name="actionLexical"/>
+    <addaction name="actionGrammar"/>
+    <addaction name="actionPredictTable"/>
+    <addaction name="actionParser"/>
+    <addaction name="actionparserTree"/>
+    <addaction name="actionSemantic"/>
+   </widget>
+   <widget class="QMenu" name="Help">
+    <property name="title">
+     <string>帮助</string>
+    </property>
+    <addaction name="actionHelp"/>
+    <addaction name="actionAbout"/>
+   </widget>
+   <widget class="QMenu" name="File">
+    <property name="title">
+     <string>文件</string>
+    </property>
+    <addaction name="actionOpen"/>
+    <addaction name="actionClose"/>
+    <addaction name="separator"/>
+    <addaction name="separator"/>
+    <addaction name="actionExit"/>
+   </widget>
+   <addaction name="File"/>
+   <addaction name="Compile"/>
+   <addaction name="Tools"/>
+   <addaction name="Help"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionGenQuat">
+   <property name="text">
+    <string>编译-生成中间代码</string>
+   </property>
+  </action>
+  <action name="actionGenAsm">
+   <property name="text">
+    <string>编译-生成目标代码</string>
+   </property>
+  </action>
+  <action name="actionLexical">
+   <property name="text">
+    <string>展示词法分析结果</string>
+   </property>
+  </action>
+  <action name="actionParser">
+   <property name="text">
+    <string>展示语法分析结果</string>
+   </property>
+  </action>
+  <action name="actionparserTree">
+   <property name="text">
+    <string>展示语法树</string>
+   </property>
+  </action>
+  <action name="actionSemantic">
+   <property name="text">
+    <string>展示语义分析结果</string>
+   </property>
+  </action>
+  <action name="actionHelp">
+   <property name="text">
+    <string>帮助</string>
+   </property>
+  </action>
+  <action name="actionAbout">
+   <property name="text">
+    <string>关于</string>
+   </property>
+  </action>
+  <action name="actionOpen">
+   <property name="text">
+    <string>打开文件</string>
+   </property>
+  </action>
+  <action name="actionClose">
+   <property name="text">
+    <string>关闭文件</string>
+   </property>
+  </action>
+  <action name="actionExit">
+   <property name="text">
+    <string>退出</string>
+   </property>
+  </action>
+  <action name="actionGrammar">
+   <property name="text">
+    <string>展示LL1文法</string>
+   </property>
+  </action>
+  <action name="actionPredictTable">
+   <property name="text">
+    <string>展示预测分析表</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
